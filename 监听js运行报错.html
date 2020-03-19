@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>监听js运行报错</title>
+</head>
+
+<input onclick="error()" type="button" value="制造错误">
+
+<script>
+    function error() {
+        let str;
+        str.substr(0);
+    }
+
+    window.onerror = function (errorMessage, scriptURI, lineNumber, columnNumber, errorObj) {
+        document.write("报错信息如下：", "<br >");
+        document.write("=====错误信息=====：", errorMessage, "<br >");
+        document.write("=====出错文件：=====", scriptURI, "<br >");
+        document.write("=====出错行号：=====", lineNumber, "<br >");
+        document.write("=====出错列号：=====", columnNumber, "<br >");
+        document.write("=====错误详情：=====", errorObj, "<br >");
+        document.write("=====错误记录：=====", "报错信息请写入后台！");
+
+        console.log("=====错误信息=====：", errorMessage);
+        console.log("=====出错文件：=====", scriptURI);
+        console.log("=====出错行号：=====", lineNumber);
+        console.log("=====出错列号：=====", columnNumber);
+        console.log("=====错误详情：=====", errorObj);
+        console.log("=====错误记录：=====", "报错信息请写入后台！");
+    }
+
+</script>
+
+</html>
